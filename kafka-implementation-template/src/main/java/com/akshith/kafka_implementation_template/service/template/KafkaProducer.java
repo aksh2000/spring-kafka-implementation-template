@@ -59,7 +59,7 @@ public abstract class KafkaProducer<T> {
      * @param message the message to be sent
      */
     private void sendMessage(T message) {
-        log.warn("Triggering Event on {} with payload : {}", topic, message);
+        log.info("Triggering Event on {} with payload : {}", topic, message);
         CompletableFuture<SendResult<String, T>> completableFuture = kafkaTemplate.send(topic, message);
         completableFuture.whenComplete((result, ex) -> {
             if (null != ex) {
