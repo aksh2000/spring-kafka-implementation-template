@@ -46,10 +46,11 @@ This repository provides a Spring Boot template for implementing Kafka producers
 ### Kafka Producer
 - Extend the KafkaProducerService class to create your producer. 
 - Implement any additional logic required for your use case.
+   - Check ```service -> config -> KafkaProducerStore.Java``` for reference
 - Inject and use the producer in your service or controller to send messages to Kafka.
 
 ### Kafka Consumer
-- Extend the KafkaListenerService class to create your listener. 
+- Extend the KafkaListener class to create your listener. 
 - Implement the processing logic and validation for received messages (Optional).
 - Spring Boot will automatically detect and register your listener component to handle messages from Kafka.
 

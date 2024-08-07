@@ -2,8 +2,6 @@ package com.akshith.kafka_implementation_template.service.template;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Map;
-
 
 /**
  * Abstract class that provides a template for Kafka listener services.
@@ -15,7 +13,7 @@ import java.util.Map;
  * @param <T> the type of the event being consumed by the listener
  */
 @Slf4j
-public abstract class KafkaListenerService<T> {
+public abstract class KafkaListener<T> {
 
     /**
      * The Kafka topic that this listener service is subscribed to.
@@ -25,7 +23,7 @@ public abstract class KafkaListenerService<T> {
      */
     public final String TOPIC;
 
-    protected KafkaListenerService(String topic) {
+    protected KafkaListener(String topic) {
         TOPIC = topic;
     }
 

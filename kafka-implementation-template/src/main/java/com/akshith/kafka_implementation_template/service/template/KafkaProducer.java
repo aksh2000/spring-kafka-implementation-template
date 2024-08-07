@@ -24,12 +24,12 @@ import java.util.concurrent.CompletableFuture;
  * @param <T> the type of the message being produced
  */
 @Slf4j
-public abstract class KafkaProducerService<T> {
+public abstract class KafkaProducer<T> {
 
     private final KafkaTemplate<String, T> kafkaTemplate;
     private final String topic;
 
-    protected KafkaProducerService(String bootstrapServers, String topic) {
+    protected KafkaProducer(String bootstrapServers, String topic) {
         this.topic = topic;
         this.kafkaTemplate = createKafkaTemplate(bootstrapServers);
     }
@@ -84,7 +84,7 @@ public abstract class KafkaProducerService<T> {
      * @param message the message to be produced
      */
     @Async
-    public void produce(T message) {
+    public final void produce(T message) {
         this.sendMessage(message);
     }
 
